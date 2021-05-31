@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img/nogomet.jpg" id="lopta1">
+    <img src="img/kosarka.jpg" id="lopta2">
+    <img src="img/odbojka.jpg" id="lopta3">
+    <img src="img/anogomet.jpg" id="lopta4">
+    <img src="img/vaterpolo.jpg" id="lopta5">
+    <img src="img/tenis.jpg" id="lopta6">
+    
+    <div id="content">
+        <table id='lopte' cellpadding='10px' style="text-align:left;">
+            <thead>
+                <tr>
+                    <th>Sport</th>
+                    <th>Proizvođač</th>
+                    <th>Naziv</th>
+                    <th>Cijena</th>
+                    <th id="izgled">Izgled</th>
+                </tr>                
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let xmlContent = '';
+        let tableLopte = document.getElementById('lopte');
+        fetch('lopte.xml').then((response)=> {
+            response.text().then((xml)=>{
+                xmlContent = xml;
+
+                let parser = new DOMParser();
+                let xmlDOM = parser.parseFromString(xmlContent, 'application/xml');
+                let lopte = xmlDOM.querySelectorAll('lopta');
+
+                lopte.forEach(loptaXmlNode => {
+
+                    let row = document.createElement('tr');
+
+                    //sport 
+                    let td = document.createElement('td');
+                    td.innerText = loptaXmlNode.children[0].innerHTML;
+                    row.appendChild(td);
+
+                    //proizvodac
+                    td = document.createElement('td');
+                    td.innerText = loptaXmlNode.children[1].innerHTML;
+                    row.appendChild(td);
+                    
+                    //naziv
+                    td = document.createElement('td');
+                    td.innerText =loptaXmlNode.children[2].innerHTML;
+                    row.appendChild(td);
+
+                    //cijena
+                    td = document.createElement('td');
+                    td.innerText =  '€' + loptaXmlNode.children[3].innerHTML;
+                    row.appendChild(td);
+
+                    tableLopte.children[1].appendChild(row);
+                    
+                });
+                
+            });
+        });    
+    </script>
+</body>
+</html>

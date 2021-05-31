@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<katalog>
+   <lopta id="01">
+      <sport>Nogomet</sport>
+      <proizvođač>Adidas</proizvođač>
+      <naziv>Uniforia Pro </naziv>
+      <cijena>130</cijena>
+      <slika>euro2020.jpg</slika>
+   </lopta>
+   <lopta id="02">
+      <sport>Košarka</sport>
+      <proizvođač>Spalding</proizvođač>
+      <naziv>NBA Offical Game Ball</naziv>
+      <cijena>140</cijena>
+   </lopta>
+   <lopta id="03">
+      <sport>Odbojka</sport>
+      <proizvođač>Molten</proizvođač>
+      <naziv>Flistatec V5M5000</naziv>
+      <cijena>40</cijena>
+   </lopta>
+   <lopta id="04">
+      <sport>Američki nogomet</sport>
+      <proizvođač>Wilson</proizvođač>
+      <naziv>F1100</naziv>
+      <cijena>82</cijena>
+   </lopta>
+   <lopta id="05">
+      <sport>Vaterpolo</sport>
+      <proizvođač>Mikasa</proizvođač>
+      <naziv>W5000</naziv>
+      <cijena>25</cijena>
+   </lopta>
+   <lopta id="06">
+      <sport>Tenis</sport>
+      <proizvođač>Dunlop</proizvođač>
+      <naziv>BTV 1.0</naziv>
+      <cijena>12</cijena>
+   </lopta>
+</katalog>
